@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content
+        ="width=device-width, initial-scale=1.0">
+    <title>A-Frame Test</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="./components/spin.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+  
+<body>
+    <a-scene>
+
+        <a-entity environment="preset: forest; dressingAmount: 500; fog: 0; grid: crosses; gridColor:#ccc; skyType:atmosphere; ground:canyon; shadow: true"></a-entity>
+        
+        <a-entity id="cameraRig">
+            <a-entity id="headset" camera="active: true" look-controls wasd-controls position="0 1.6 0"></a-entity>
+            <a-entity oculus-touch-controls="hand: left"></a-entity>
+            <a-entity oculus-touch-controls="hand: right"></a-entity>   
+            <a-entity id="leftHand" hand-tracking-controls="hand: left;"></a-entity>
+            <a-entity id="rightHand" hand-tracking-controls="hand: right;"></a-entity>
+            <a-entity vive-controls="hand: left"></a-entity>
+            <a-entity vive-controls="hand: right"></a-entity>
+        </a-entity>
+
+        <a-box id="spinnycube" shadow position="0 0.75 -3" rotation="0 45 0" color="#FFFFFF" spin="startSpeed: 45; accel: 0">
+            <a-entity text="value:Hello world!; align: center; color: white" position="0 1 0" scale="5 5 5" ></a-entity>
+            <a-entity text="value:Hello world!; align: center; color: white" position="0 1 0" scale="5 5 5" rotation="0 180 0"></a-entity>
+        </a-box>
+        
+    </a-scene>
+  </body>
+  
+</html>
